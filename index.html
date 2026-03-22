@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="calendar-container" id="mainContainer">
+    <div class="menu-toggle" id="menuBtn">☰</div>
+    
+    <div class="top-right-controls">
+        <div class="clock-section">
+            <div id="digitalClock">00:00:00</div>
+            <select id="timezoneSelect">
+                <option value="local">Local Time</option>
+                <option value="America/New_York">New York 🇺🇸</option>
+                <option value="Europe/Paris">Paris 🇫🇷</option>
+                <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+                <option value="Africa/Tunis">Tunis 🇹🇳</option>
+            </select>
+        </div>
+        <div class="settings-toggle" id="settingsBtn">⚙️</div>
+    </div>
+
+    <div class="sidebar" id="sidebarMenu">
+        <ul id="monthList">
+            <li>JANUARY</li><li>FEBRUARY</li><li class="active">MARCH</li>
+            <li>APRIL</li><li>MAY</li><li>JUNE</li><li>JULY</li>
+            <li>AUGUST</li><li>SEPTEMBER</li><li>OCTOBER</li><li>NOVEMBER</li><li>DECEMBER</li>
+        </ul>
+    </div>
+
+    <div class="calendar-main">
+        <h2 class="month-title">MARCH 2026</h2>
+        <div class="days-grid" id="daysGrid">
+            <div class="day-name">Sun</div><div class="day-name">Mon</div><div class="day-name">Tue</div>
+            <div class="day-name">Wed</div><div class="day-name">Thu</div><div class="day-name">Fri</div><div class="day-name">Sat</div>
+        </div>
+    </div>
+
+    <div class="event-details">
+        <h3>Reminders</h3>
+        <div id="notificationsList"></div>
+        <hr>
+        <h3 id="detailDate">Select a day</h3>
+        <div id="noteEditor" style="display:none;">
+            <textarea id="noteInput" placeholder="Type here..."></textarea>
+            <div class="note-actions">
+                <button onclick="saveNote()" class="save-btn">Save</button>
+                <button onclick="deleteNote()" class="delete-btn">Delete</button>
+            </div>
+        </div>
+        <div class="quote-container" style="margin-top: auto; padding-top: 20px; font-style: italic; font-size: 13px; opacity: 0.8; text-align: center;">
+        <p id="dailyQuote">"Loading your daily inspiration..."</p>
+    </div>
+    <footer id="foot">
+        <div>
+            @ 2026 tout les Reservées Neurva Space
+        </div></footer>
+    </div>
+</div>
+
+<div class="modal" id="settingsModal">
+    <div class="modal-content">
+        <h3>Settings</h3>
+        <div class="setting-item">
+            <label>Theme Color:</label>
+            <input type="color" id="colorPicker">
+        </div>
+        <div class="setting-item">
+            <label>Background Image URL:</label>
+            <input type="text" id="bgInput" placeholder="Paste link here...">
+        </div>
+        <button onclick="resetData()" class="reset-btn">Reset All</button>
+        <button id="closeSettings">Done</button>
+    </div>
+</div>
+<div id="closeApp" style="-webkit-app-region: no-drag; position: absolute; top: 10px; right: 10px; cursor: pointer; z-index: 2000; font-size: 20px; color: white; opacity: 0.6;">✕</div>
+<script src="script.js"></script>
+</body>
+</html>
